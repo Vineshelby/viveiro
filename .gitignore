@@ -1,14 +1,21 @@
+# Ignore KiCad backups
 viveiroPCB/viveiroPCB-backups/
+
+# Ignore IDE configuration files
 .theia/
 .vscode/
-.theia/
+
+# Ignore temporary files and logs
 *.log
 *.tmp
+*.swp
+
+# Ignore build files
 build/
 *.bin
 *.hex
-*.bak
-*.swp
+
+# Ignore backups and generated files from KiCad
 *.bak
 *-cache.lib
 *.pro~
