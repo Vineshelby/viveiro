@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 /*
  *  @file Viveiro.ino
  *  @author Marcus Vinícius (marcaovini07@gmail.com)
@@ -24,7 +26,6 @@
 #include "peripheral_control.hpp"
 
 const esp_task_wdt_config_t configWDTtask = {30000,true};
-
 
 const int numModules = 5; //global reference
 const int maxIrrigationSlots = 10;  //global reference
@@ -70,6 +71,28 @@ ApiLinks apiLinks = {};
 Sensor humiSensors[numModules] = {{}}, tempSensors[numModules] = {{}};
 TimeIrrigation irrigationSchedulesNvs[maxIrrigationSlots] = {{}};
 TimeIrrigation irrigationSchedulesApi[maxIrrigationSlots] = {{}};
+
+void settings();
+
+void taskReadSensors(void *pvParameters);
+
+void taskValve(void *pvParameters);
+
+void taskApiCommunication(void *pvParameters);
+
+void taskSystemMaintenance(void *pvParameters);
+
+void taskSystemMaintenance(void *pvParameters);
+
+void timerCallbackScheduleUpdate(TimerHandle_t xTimer);
+
+void timerCallbacksensorSending(TimerHandle_t xTimer);
+
+void timerCallbackReset(TimerHandle_t xTimer);
+
+void timerCallbackValveState(TimerHandle_t xTimer);
+
+bool checkValveStatusIrrigationSchedules(); 
 
 void setup()
 {
