@@ -1,1 +1,14 @@
 viveiroPCB/viveiroPCB-backups/
+.theia/
+.vscode/
+.theia/
+*.log
+*.tmp
+build/
+*.bin
+*.hex
+*.bak
+*.swp
+*.bak
+*-cache.lib
+*.pro~
