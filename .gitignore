@@ -1,6 +1,3 @@
-# Ignore KiCad backups
-viveiroPCB/viveiroPCB-backups/
-
 # Ignore IDE configuration files
 .theia/
 .vscode/
@@ -16,6 +13,14 @@ build/
 *.hex
 
 # Ignore backups and generated files from KiCad
-*.bak
-*-cache.lib
-*.pro~
+viveiroPCB/viveiroPCB-backups/
+*/fp-info-cache
+
+*.kicad_sch-user
+*.kicad_pcb-user
+
+*.kicad_sch-bak
+*.kicad_pcb-bak
+*.kicad_pro-bak
+
+*.lck
